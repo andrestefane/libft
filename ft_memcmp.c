@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 14:46:37 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/13 17:05:42 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/14 17:04:25 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/14 17:14:46 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*csrc;
-	char	*cdest;
-	int		i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	csrc = (char *) src;
-	cdest = (char *)dest;
-	i = n;
-	if (csrc < cdest && csrc + n > cdest)
+	p1 = s1;
+	p2 = s2;
+	while (n--)
 	{
-		while (n--)
-			cdest[n] = csrc[n];
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		else
+		{
+			p1++;
+			p2++;
+		}
 	}
-	else
-	{
-		while (n--)
-			*cdest++ = *csrc++;
-	}
-	return (dest);
+	return (0);
 }
