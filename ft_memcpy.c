@@ -6,27 +6,20 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:52:47 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/14 13:37:54 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:23:05 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*csrc;
-	char	*cdest;
-	size_t	i;
+	void	*ret;
 
-	if (!dest || !src)
+	if (!dst && !src)
 		return (NULL);
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	i = 0;
-	while (i < n)
-	{
-		cdest[i] = csrc[i];
-		i++;
-	}
-	return (dest);
+	ret = dst;
+	while (n--)
+		*(char *)dst++ = *(char *)src++;
+	return (ret);
 }

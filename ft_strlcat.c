@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:25:40 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/13 17:14:50 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:39:07 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	int		x;
-	int		st_len;
+	size_t				i;
+	unsigned int		x;
+	unsigned int		st_len;
 
 	st_len = ft_strlen(dst);
 	x = ft_strlen(src);
 	i = 0;
-	if (size == 0)
-		return (x);
+	if (size <= st_len)
+		return (size + x);
 	while (dst[i] && i < size - 1)
 	{
 		i++;
@@ -34,20 +34,3 @@ int	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (st_len + x);
 }
-/*int main(void)
-{
-    char dst[20] = "Hello ";
-    const char *src = "world!";
-    size_t size = sizeof(dst);
-
-    printf("Initial dst: %s\n", dst);
-    printf("src: %s\n", src);
-    printf("size: %zu\n", size);
-
-    int result = ft_strlcat(dst, src, size);
-
-    printf("Concatenated string: %s\n", dst);
-    printf("Resulting length: %d\n", result);
-
-    return 0;
-}*/

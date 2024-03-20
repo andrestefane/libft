@@ -6,24 +6,17 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:33:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/14 12:02:08 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/18 12:45:25 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(char *str)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (c >= 'a' && c <= 'z')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 32;
-		}
-		i++;
+		c = c - 32;
 	}
-	return (str[i]);
+	return (c);
 }
