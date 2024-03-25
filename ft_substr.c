@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:24:51 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/18 16:32:38 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:32:47 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	d;
-	char	*subs;
+	char	*sub;
+	size_t	new_len;
 
-	i = 0;
-	d = 0;
-	subs = (char *)malloc(sizeof(char) * (len + 1));
-	if (!subs || !s)
-	{
+	if (!s)
 		return (NULL);
-	}
-	while (s[i])
+	if (start >= (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
+	if (start >= (unsigned int)ft_strlen(s))
 	{
-		if (i >= start && d < len)
-		{
-			subs[d] = s[i];
-			d++;
-		}
-		i++;
+		sub = ft_calloc(1, sizeof(char));
+		if (!sub)
+			return (NULL);
+		return (sub);
 	}
-	subs[d] = '\0';
-	return (subs);
+	new_len = ft_strlen(s + start);
+	if (new_len > len)
+		new_len = len;
+	sub = (char *)malloc((new_len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
+	sub[new_len] = '\0';
+	while (new_len--)
+		sub[new_len] = s[start + new_len];
+	return (sub);
 }

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:31:31 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:05:03 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/21 17:18:48 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/21 17:29:26 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	total;
-	void	*ptr;
+	t_list	*new;
 
-	total = count * size;
-	ptr = malloc(total);
-	if (ptr != NULL)
-	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
-	}
-	return (NULL);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
 }

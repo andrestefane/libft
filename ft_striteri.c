@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:31:31 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:05:03 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/21 13:40:04 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/21 13:41:57 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	total;
-	void	*ptr;
+	int		len;
+	int		i;
 
-	total = count * size;
-	ptr = malloc(total);
-	if (ptr != NULL)
+	i = 0;
+	if (s != NULL && f != NULL)
 	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			(*f)(i, s);
+			s++;
+			i++;
+		}
 	}
-	return (NULL);
 }

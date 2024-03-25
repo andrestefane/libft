@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:31:31 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:05:03 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/25 10:47:12 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/25 10:48:18 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	total;
-	void	*ptr;
+	t_list	*p;
 
-	total = count * size;
-	ptr = malloc(total);
-	if (ptr != NULL)
+	p = lst;
+	if (p == NULL || lst == NULL)
+		return (NULL);
+	if (p->next == NULL)
+		return (p);
+	while (p)
 	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
+		if (p->next == NULL)
+			return (p);
+		p = p->next;
 	}
-	return (NULL);
+	return (p);
 }

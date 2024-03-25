@@ -6,59 +6,54 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:33:04 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/20 16:55:03 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:57:27 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static int	ft_minnum(int n)
+static int	num_digit(long num)
 {
-	if (n == -2147483648)
-	{
-		return (-1);
-	}
-	return (0);
-}*/
+	int	cur;
 
-static	int	ft_intlong(int n)
-{
-	int	len;
-
-	len = 0;
-	while (n != 0)
+	cur = 0;
+	if (num == 0)
+		return (1);
+	if (num < 0)
+		cur++;
+	while (num != 0)
 	{
-		len++;
-		n /= 10;
+		num = num / 10;
+		cur++;
 	}
-	return (len);
+	return (cur);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	int		i;
-	int		isnegative;
-	char	*buffer;
+	long	len;
+	long	nl;
+	char	*result;
 
-	len = ft_intlong(n);
-	isnegative = 0;
+	len = num_digit(n);
+	nl = n;
 	if (n < 0)
-	{
-		isnegative = 1;
-		n = -n;
-	}
-	buffer = (char *)malloc((len + isnegative + 1) * sizeof(char));
-	if (buffer == NULL)
+		nl *= -1;
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
 		return (NULL);
-	i = len + isnegative - 1;
-	while (n != 0)
+	result[len] = 0;
+	if (nl == 0)
+		result[0] = '0';
+	else
 	{
-		buffer[i--] = '0' + (n % 10);
-		n /= 10;
+		while (len--, nl != 0)
+		{
+			result[len] = (nl % 10) + '0';
+			nl = (nl - (nl % 10)) / 10;
+		}
+		if (n < 0)
+			result[len] = '-';
 	}
-	if (isnegative)
-		buffer[0] = '-';
-	buffer[len + isnegative] = '\0';
-	return (buffer);
+	return (result);
 }

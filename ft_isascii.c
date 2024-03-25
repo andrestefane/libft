@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:15:52 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/13 15:54:30 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:29:04 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_asascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 	{

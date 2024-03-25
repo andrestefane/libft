@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:31:31 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:05:03 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/21 13:17:24 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/21 13:28:28 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	total;
-	void	*ptr;
+	size_t	lens1;
+	size_t	lens2;
+	char	*result;
 
-	total = count * size;
-	ptr = malloc(total);
-	if (ptr != NULL)
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	result = malloc(lens1 + lens2 + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	if (result)
 	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
+		ft_memcpy(result, s1, lens1);
+		ft_memcpy(result + lens1, s2, lens2 + 1);
 	}
-	return (NULL);
+	return (result);
 }

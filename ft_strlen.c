@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:27:42 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/18 12:49:05 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:47:52 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		i++;
 	}

@@ -6,55 +6,46 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:27:01 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/20 13:14:44 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:40:09 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_chklen(const char *s1, const char *set)
+static int	ft_number_guessing(char const *s1, char c)
 {
-	size_t	end;
-	size_t	len;
-	size_t	start;
+	int	i;
 
-	start = 0;
-	end = 0;
-	len = 0;
-	while (s1[end] != '\0')
-	{
-		if (ft_strchr(set, s1[end]) == NULL)
-		{
-			len = end - start;
-		}
-		end++;
-	}
-	return (len);
+	i = 0;
+	while (s1[i])
+		if (s1[i++] == c)
+			return (1);
+	return (0);
 }
 
-char	*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
-	size_t	len;
 	size_t	i;
-	char	*result;
+	char	*new;
+	size_t	len;
+	size_t	x;
 
-	start = 0;
-	end = 0;
 	i = 0;
-	len = ft_chklen(s1, set);
-	if (len == 0)
-		return (0);
-	while (s1[start] != '\0' && ft_strchr(set, s1[start]) != NULL)
-		start++;
-	end = start;
-	result = (char *)malloc((len + 1) * sizeof(char));
-	while (i < len)
-	{
-		result[i] = s1[start + i];
+	x = 0;
+	if (!s1)
+		return (NULL);
+	len = ft_strlen(s1);
+	while (ft_number_guessing(set, s1[i]) && s1[i])
 		i++;
-	}
-	result[len] = '\0';
-	return (result);
+	while (ft_number_guessing(set, s1[len - 1]) && (len - 1))
+		len--;
+	if (len < i)
+		len = i;
+	new = malloc(len - i + 1);
+	if (!new)
+		return (NULL);
+	while (i < len)
+		new[x++] = s1[i++];
+	new[x] = '\0';
+	return (new);
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:31:31 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:05:03 by astefane         ###   ########.fr       */
+/*   Created: 2024/03/25 11:09:25 by astefane          #+#    #+#             */
+/*   Updated: 2024/03/25 16:20:41 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	total;
-	void	*ptr;
+	t_list	*new_list;
+	t_list	*node;
 
-	total = count * size;
-	ptr = malloc(total);
-	if (ptr != NULL)
+	new_list = NULL;
+	while (lst)
 	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
+		node = ft_lstnew(f(lst->content));
+		if (!node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, node);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (new_list);
 }
