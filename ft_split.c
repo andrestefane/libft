@@ -6,71 +6,78 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:13:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 14:14:53 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:44:32 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_split_string(char *s, const char *set)
+static size_t	ft_word_count(char const *s, char c)
 {
-	int		count;
-	int		i;
-	char	**array;
+	size_t	count;
 
-	count = 0;
-	i = 0;
-	while (s[i])
+	if (!*s)
+		return (0);
+	count = 0; //la inicializamos aqui para asegurarnos de que tenga el valor correcto
+	while (*s)
 	{
-		while (s[i] && ft_strchr(set, s[i]))
-			i++;
-		if (s[i])
-		{
+		while (*s == c)
+			s++;
+		if (*s)
 			count++;
-			while (s[i] && !ft_strchr(set, s[i]))
-				i++;
-		}
+		while (*s != c && *s)
+			s++;
 	}
-	array = (char **)malloc(sizeof(char *) * (count +1));
-	if (!array)
-		return (NULL);
-	return (array);
+	return (count);
 }
 
-static	char	**ft_delemiter(char *s, const char *set)
+static void	ft_freelst(char **lst, int i)
 {
-	char	**array;
-	int		i;
-	int		count;
-	int		start;
+	while (i >= 0)
+		free(lst[i--]);
+	free(lst);
+}
 
-	array = ft_split_string(s, set);
-	i = 0;
-	count = 0;
-	if (!array)
-		return (NULL);
-	while (s[i])
+static char	**ft_word_split(char **lst, char const *s, char c, int i)
+{
+	size_t	wlen;
+
+	while (*s)
 	{
-		while (s[i] && ft_strchr(set, s[i]))
-			i++;
-		if (s[i])
+		while (*s == c && *s)
+			s++;
+		if (*s)
 		{
-			start = i;
-			while (s[i] && !ft_strchr(set, s[i]))
-				i++;
-			array[count++] = ft_substr(s + start, 0, i - start);
+			if (!ft_strchr(s, c))
+				wlen = ft_strlen(s);
+			else
+				wlen = ft_strchr(s, c) - s;
+			lst[i] = ft_substr(s, 0, wlen);
+			if (lst[i] == NULL)
+			{
+				ft_freelst(lst, i - 1);
+				return (NULL);
+			}
+			s += wlen;
+			i++;
 		}
 	}
-	array[count] = NULL;
-	return (array);
+	lst[i] = NULL;
+	return (lst);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c) //dividimos una cadena de caracteres en subcadenas mas pequeñas basadas en un delimitador
 {
-	char	**result;
+	char	**lst;
+	int		i;
 
-	if (!s || !c)
+	i = 0;
+	lst = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
+	if (!s || !lst)
 		return (NULL);
-	result = ft_delemiter((char *)s, &c);
-	return (result);
+	lst = ft_word_split(lst, s, c, i);
+	if (!lst)
+		return (NULL);
+	else
+		return (lst);
 }

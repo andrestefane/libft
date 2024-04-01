@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:25:40 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/20 15:39:07 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:45:32 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_strlcat(char *dst, const char *src, size_t size) //concatenamos 2 strings sin que exceda el size
 {
 	size_t				i;
 	unsigned int		x;
@@ -21,16 +21,16 @@ int	ft_strlcat(char *dst, const char *src, size_t size)
 	st_len = ft_strlen(dst);
 	x = ft_strlen(src);
 	i = 0;
-	if (size <= st_len)
-		return (size + x);
-	while (dst[i] && i < size - 1)
+	if (size <= st_len) // si size es mayor que la longitud de destino si es verdadero no hay suficiente espacio para copiar una string completa
+		return (size + x); // es el tamaño total que tendria la cadena concatenada
+	while (dst[i] && i < size - 1) // dejamos espacio para '\0'
 	{
 		i++;
 	}
 	while (*src && i < size - 1)
 	{
-		dst[i++] = *src++;
+		dst[i++] = *src++; //copiamos '*src' en dst
 	}
 	dst[i] = '\0';
-	return (st_len + x);
+	return (st_len + x); //devolvemos la string 'dst + src'
 }
