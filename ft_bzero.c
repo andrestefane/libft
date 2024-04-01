@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:21:30 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/14 12:12:32 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/01 09:27:25 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	s_char = (unsigned char *)s;
 	while (i < n)
 	{
-		s_char[i] = 0;
+		s_char[i] = 0; // convertimos todo en 0 
 		i++;
 	}
 }

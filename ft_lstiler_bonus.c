@@ -6,17 +6,17 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:58:28 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 11:07:39 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/01 09:27:17 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *)) //permitimos aplicar una funcion a cada elemento de una lista
 {
 	while (lst)
 	{
-		f(lst->content);
-		lst = lst->next;
+		f(lst->content); //llamamos a 'f' y le pasamos el contenido de nodo actual
+		lst = lst->next; //apuntamos al siguiente nodo de la lista
 	}
 }
