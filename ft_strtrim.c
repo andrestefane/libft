@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:27:01 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 15:40:09 by astefane         ###   ########.fr       */
+/*   Updated: 2024/03/26 05:59:52 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	x = 0;
 	if (!s1)
 		return (NULL);
-	len = ft_strlen(s1);
 	while (ft_number_guessing(set, s1[i]) && s1[i])
 		i++;
+	len = ft_strlen(s1);
 	while (ft_number_guessing(set, s1[len - 1]) && (len - 1))
 		len--;
 	if (len < i)
