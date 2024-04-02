@@ -6,18 +6,18 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:20:15 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/14 14:30:01 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:37:20 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n) //compara los bytes de 2 strings 
 {
 	int	i;
 
 	i = 0;
-	while (n && s1[i] && (s1[i] == s2[i]))
+	while (n && s1[i] && (s1[i] == s2[i])) //comparamos las strings hasta alcanzar el numero de n
 	{
 		i++;
 		n--;
@@ -28,6 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	else
 	{
-		return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+		return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i)); //devolvemos la diferencia de bytes
 	}
 }
