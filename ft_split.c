@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:13:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/02 15:47:06 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:20:51 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,23 @@ char	**ft_split(char const *s, char c) //dividimos una cadena de caracteres en s
 	else
 		return (lst);
 }
+
+/* int	main(void)
+{
+	char	*s;
+	char	c;
+	char	**result;
+	int		i;
+
+	s = "pasas que cosas";
+	c = 'a';
+	i = 0;
+	result = ft_split(s, c);
+	while (result[i] != '\0')
+	{
+		printf("las nuevas cadenas son %s\n", result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+} */
