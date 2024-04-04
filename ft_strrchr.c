@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:57:17 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/02 12:20:50 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:49:22 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,15 @@ char	*ft_strrchr(const char *s, int c) // buscamos la ultima aparacion de un car
 	}
 	return (NULL);
 }
+
+/* int	main(void)
+{
+	char	*s = "ola";
+	int		c = 'h';
+	char	*result = ft_strrchr(s, c);
+	if(result != NULL)
+		printf("Se encuentra el carácter '%c'en la string %s.\n", c, result);
+	else
+		printf("no se encuentra %c en la string", c);
+	return (0);
+} */

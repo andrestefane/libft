@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:27:01 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/02 12:50:32 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:18:20 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,13 @@ char	*ft_strtrim(char const *s1, char const *set) //eliminamos los caractecteres
 	new[x] = '\0';
 	return (new);
 }
+
+/* int	main(void)
+{
+	char	*s = "hola";
+	char	*set = "ho";
+	char	*result = ft_strtrim(s, set);
+	printf("la cadena es %s\n", result);
+	free(result);
+	return (0);
+} */

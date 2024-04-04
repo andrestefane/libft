@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:32:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/02 11:18:51 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:51:19 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,23 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) // toma una strin
 	str[i] = '\0';
 	return (str);
 }
+
+/* static char	is_cap(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
+	return (0);
+}
+
+int	main(void)
+{
+	char	*str = "HOLAAA";
+	char	*result = ft_strmapi(str ,&is_cap);
+	printf("the new string is %s\n", result);
+	free(result);
+	return (0);
+}
+ */

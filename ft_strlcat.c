@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:25:40 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 17:45:32 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:58:02 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,15 @@ int	ft_strlcat(char *dst, const char *src, size_t size) //concatenamos 2 strings
 	dst[i] = '\0';
 	return (st_len + x); //devolvemos la string 'dst + src'
 }
+
+/* int	main(void)
+{
+	char	dest[20] = "hola";
+	const char *source = " que tal";
+	int		result;
+	size_t 	size = sizeof(dest);
+
+	result = ft_strlcat(dest, source, size);
+	printf("la nueva cadena es %s\n", dest);
+	return (0);
+} */

@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:17:24 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 16:21:29 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:39:12 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,16 @@ char	*ft_strjoin(const char *s1, const char *s2) //concadena 2 strings
 	}
 	return (result);
 }
+
+/* int	main(void)
+{
+	char	*string1;
+	char	*string2;
+	char	*result;
+
+	string1 = "-";
+	string2 = "76";
+	result = ft_strjoin(string1, string2);
+	printf("la nueva string es %s\n", result);
+	return (0);
+} */

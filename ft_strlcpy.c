@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:45:09 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 17:56:40 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:05:55 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,14 @@ int	ft_strlcpy(char *dest, char *src, unsigned int size) //copia una string hast
 	dest[i] = '\0';
 	return (src_len);
 }
+
+/* int	main(void)
+{
+	char	dest[] = "";
+	char	*source = "hola que tal";
+	int		result;
+
+	result = ft_strlcpy(dest, source, 4);
+	printf("la nueva string es %s\n", dest);
+	return (0);
+} */

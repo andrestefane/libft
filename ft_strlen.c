@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:27:42 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 18:09:11 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:07:52 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,11 @@ int	ft_strlen(const char *s) //comprobamos la longitud de la sting
 	}
 	return (i);//devolvemos lo que hemos ido sumando en la i
 }
+
+/* int	main(void)
+{
+	char	*string = "hola";
+	int		result = ft_strlen(string);
+	printf("la longitud es %d\n", result);
+	return(0);
+} */

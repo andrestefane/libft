@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:05:07 by astefane          #+#    #+#             */
-/*   Updated: 2024/03/25 12:32:00 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 11:51:56 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strlen(const char *s);
 int		ft_strlcat(char *dst, const char *src, size_t size);
-int		ft_strlcpy(char *dest, char *src, unsigned int size);
+int		ft_strlcpy(char *dest, const char *src, unsigned int size);
 void	*ft_memset(void *b, int c, int len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 int		ft_isprint(int c);

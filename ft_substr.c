@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:24:51 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/02 15:52:07 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:23:17 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len) // extraemos una 
 											//de la cadena original 's' a la subcadena 'sub'
 	return (sub);
 }
+
+/* int	main(void)
+{
+	char	*s = "hola";
+	int		start = 3;
+	char	*result = ft_substr(s, start, 2);
+	printf("la substring es %s\n", result);
+	free(result);
+	return (0);
+}
+ */
