@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:25:50 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:03:23 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:41:10 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strchr(const char *s, int c)
 	// devolvemos 's + i' porque estamos recoriendo con i toda la string
 	return ((char *)s + i); 
 }
-/* int	main(void)
+/*  int	main(void)
 {
 	char	*string;
 	int		c;
@@ -41,4 +41,4 @@ char	*ft_strchr(const char *s, int c)
 	printf("se encontro '%c' en el byte %ld\n", c, result - string);
 	return (0);
 }
- */
+  */

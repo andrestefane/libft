@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:57:17 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:03:13 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:02:55 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 
 /* int	main(void)
 {
-	char	*s = "ola";
+	char	*s = "hola";
 	int		c = 'h';
 	char	*result = ft_strrchr(s, c);
 	if(result != NULL)

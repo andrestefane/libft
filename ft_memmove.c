@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:46:37 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 08:51:53 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:08:04 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//copia datos correctamente sin que superpongan
+//copia una string a otra sin superposicion
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*csrc;

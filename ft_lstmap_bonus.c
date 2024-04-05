@@ -6,14 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:09:25 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 19:10:40 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:27:22 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//toma tres argumentos un puntero, un puntero a una funcion 
-//y un puntero de una funcion que libera memoria
+//aplica una funcion a cada elemento de la lista y crea una lista con los resultados
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 
@@ -24,7 +23,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		//creamos un nuevo nodo y decimos que lst apuntara al contenido
-		// f hace referencia de la funcion que crearemos.
 		node = ft_lstnew(f(lst->content));
 		//si hay algun error en el lodo liberamos el nodo y retornamos NULL
 		if (!node)
@@ -32,7 +30,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		//agregamos el enodo en una nueva lista
+		//agregamos el nodo en una nueva lista
 		ft_lstadd_back(&new_list, node);
 		//nos movemos al siguiente nodo de la lista original
 		lst = lst->next;

@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:18:48 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 16:36:33 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:30:52 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ t_list	*ft_lstnew(void *content) //añadir un nuevo nodo a la lista
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-		//apuntamos el  nuevo nodo al contenido y le decimos que es igual a content
+//le decimo que el new apunta content y que new sera el siguiente nodo.
 	new -> content = content; 
-	new -> next = NULL; //si apuntamos al siguiente nodo dará NULL
+	new -> next = NULL; 
 	return (new);
 }
 

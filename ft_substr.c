@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:24:51 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:04:38 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:14:21 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	//en cada iteracion del bucle, 
 	//se asigna el caracter de la posicion s[start + new_len]
 	//de la cadena original 's' a la subcadena 'sub'
-	return (sub);
 		sub[new_len] = s[start + new_len];
+	return (sub);
 }
 
 /* int	main(void)

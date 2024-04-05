@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:33:04 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:04:41 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:00:16 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	return (NULL);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	*s1 = "hooooola";
-	char	*s2 = "";
-	char	*result = ft_strnstr(s1, s2, 2);
+	char	*s1 = "hola buenas";
+	char	*s2 = "buenas";
+	char	*result = ft_strnstr(s1, s2, 12);
 	printf("la cadena es %s\n", result);
 	return (0);
-} */
+} 

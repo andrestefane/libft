@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 15:49:35 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:03:22 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:46:39 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strdup(const char *s1)
 	return (dup);
 }
 
-/* int	main(void)
+/*  int	main(void)
 {
 	char	*string;
 	char	*result;
@@ -35,4 +35,6 @@ char	*ft_strdup(const char *s1)
 	string = "hola mundo";
 	result = ft_strdup(string);
 	printf("la string es %s\n", result);
-} */
+	free (result);
+	return 0;
+}  */

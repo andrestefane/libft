@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:52:47 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 08:51:53 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:09:22 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n) // copia los bytes indicado por 'n' de una string 'src' a otra string 'dst'
+// copia los bytes indicado por 'n' de una string 'src' a otra string 'dst'
+void	*ft_memcpy(void *dst, const void *src, size_t n) 
 {
 	void	*ret; // nos da mayor flexibilidad y reutilizacion del codigo ya que se puede usar para cualquier tipo de puntero
 
@@ -20,7 +20,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n) // copia los bytes indicad
 		return (NULL);
 	ret = dst;
 	while (n--) // vamos restando los bytes que vamos a restar
-		*(char *)dst++ = *(char *)src++; //vamos sumando las 2 strings en 1 byte cada una para que apunten al sigueinte byte, una vez copiado todos los bytes devolvemos el 'ret'
+	//vamos sumando las 2 strings en 1 byte cada una para que apunten al sigueinte byte,
+	// una vez copiado todos los bytes devolvemos el 'ret'
+		*(char *)dst++ = *(char *)src++;
 	return (ret);
 }
 
