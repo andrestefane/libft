@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:04:25 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 11:17:15 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:51:54 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n) //compara 2 strings y di
 	}
 	return (0);
 }
+
+
+/* int main()
+{
+    const char str1[] = "Hello, world!";
+    const char str2[] = "Hello, there!";
+
+
+    int difference = ft_memcmp(str1, str2, sizeof(str1));
+
+    printf("La diferencia entre las cadenas es: %d\n", difference);
+
+    return 0;
+} */

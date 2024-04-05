@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:50:01 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 19:12:59 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:51:57 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ void	ft_lstadd_back(t_list **alst, t_list *new) //agregamos un elemento al final
 	if ((*alst))
 	{
 		while (temporal->next != NULL)
-			temporal = temporal->next; //despues de esta linea apuntamos al ultimo nodo de la lista o NULL  si el nodo actual es el ultimo
-		temporal->next = new; // enlazamos el nuevo nodo new al final de la lista
+		//despues de esta linea apuntamos al ultimo nodo de la lista o NULL  si el nodo actual es el ultimo
+			temporal = temporal->next;
+			// enlazamos el nuevo nodo new al final de la lista
+		temporal->next = new;
 	}
-	// en caso de que apunte a NULL le decimos que new lo asignamos al principio de la lista
+	// verificamos si '*alst' es NULL, si lo es decimos que 'new' se asigna como el primer elemento de la lista
 	if (!(*alst)) 
 		((*alst) = new);
 }

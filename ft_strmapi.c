@@ -6,14 +6,14 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:32:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 14:51:19 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:03:15 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) // toma una string y aplica una funcion a cada caracter de la string produciendo una nueva
+ // toma una string y aplica una funcion a cada caracter de la string produciendo una nueva
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	len;
 	size_t	i;
@@ -22,13 +22,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)) // toma una strin
 	i = 0;
 	if (!s || !f)
 		return (0);
-	len = ft_strlen(s); // cogemos la longitud de puntero s y lo metemos en len
+		// cogemos la longitud de puntero s y lo metemos en len
+	len = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	while (i < len) 
 	{
-		str[i] = f(i, s[i]); //decimos que el 'f' es la funcion y aplica a los caracteres de la string 's'
+		 //decimos que el 'f' es la funcion y aplica a los caracteres de la string 's'
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

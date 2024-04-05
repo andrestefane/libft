@@ -6,13 +6,14 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:24:51 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 16:23:17 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:04:38 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len) // extraemos una subcadena de una cadena dada desde un indice y longitud determinada
+// extraemos una subcadena de una cadena dada desde un indice y longitud determinada
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	new_len;
@@ -21,23 +22,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len) // extraemos una 
 		return (NULL);
 	if (start >= (unsigned int)ft_strlen(s))
 	{
-		sub = ft_calloc(1, sizeof(char)); //almacenamos un solo byte
+		//almacenamos un solo byte
+		sub = ft_calloc(1, sizeof(char));
 		if (!sub)
 			return (NULL);
 		return (sub);
 	}
 	new_len = ft_strlen(s + start);
-	if (new_len > len)// con esto le decimos que si es mayor que len que 'new_len' sea del mismo tamaño que 'len'
+	// con esto le decimos que si es mayor que len que 'new_len' sea del mismo tamaño que 'len'
+	if (new_len > len)
 		new_len = len; 
-	sub = (char *)malloc((new_len + 1) * sizeof(char)); //lo multipicamos por char para almacenar solo 1 byte
+	//lo multipicamos por char para almacenar solo 1 byte
+	sub = (char *)malloc((new_len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	sub[new_len] = '\0';
-	while (new_len--) //copiamos desde la cadena origen 's' a la subcadena 'sub'
-		sub[new_len] = s[start + new_len]; //en cada iteracion del bucle, 
-											//se asigna el caracter de la posicion s[start + new_len]
-											//de la cadena original 's' a la subcadena 'sub'
+	//copiamos desde la cadena origen 's' a la subcadena 'sub'
+	while (new_len--)
+	//en cada iteracion del bucle, 
+	//se asigna el caracter de la posicion s[start + new_len]
+	//de la cadena original 's' a la subcadena 'sub'
 	return (sub);
+		sub[new_len] = s[start + new_len];
 }
 
 /* int	main(void)

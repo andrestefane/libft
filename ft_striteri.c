@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:40:04 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 12:32:21 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:03:21 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i = 0;
 		while (s[i] != '\0')
 		{
-			//creamos una funcion 'f' y pasariamos sus parametros 'unsigned int i y char *s'
+			//indicamos que la funcion 'f' y pasariamos sus parametros 'unsigned int i y char *s'
 			(*f)(i, &s[i]);
 			i++;
 		}

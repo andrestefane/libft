@@ -6,24 +6,27 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:27:01 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/04 16:18:20 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:04:40 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_number_guessing(char const *s1, char c) //recorre la string hasta encontrar 'c'
+//recorre la string hasta encontrar 'c'
+static int	ft_number_guessing(char const *s1, char c)
 {
 	int	i;
 
 	i = 0;
 	while (s1[i])
-		if (s1[i++] == c) //si el caracter de s1 es igual a c devuelve 1
+	//si el caracter de s1 es igual a c devuelve 1
+		if (s1[i++] == c)
 			return (1);
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set) //eliminamos los caractecteres de la string 'set' tanto al principio como al final de la string 's1'
+//eliminamos los caractecteres de la string 'set' tanto al principio como al final de la string 's1'
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	char	*new;
@@ -34,14 +37,20 @@ char	*ft_strtrim(char const *s1, char const *set) //eliminamos los caractecteres
 	x = 0;
 	if (!s1)
 		return (NULL);
-	while (ft_number_guessing(set, s1[i]) && s1[i]) //recorre la string 's1' desde principio  hasta encontrar el primer caracter que no en el conjuto de caracteres de 'set'
+	//recorre la string 's1' desde principio  hasta encontrar el primer caracter que no en el conjuto de caracteres de 'set'
+	while (ft_number_guessing(set, s1[i]) && s1[i])
 		i++;
 	len = ft_strlen(s1);
-	while (ft_number_guessing(set, s1[len - 1]) && (len - 1)) //recorre la string 's1' y elimina caracteres que no estan en el conjuto de caracteres de 'set'
-		len--; // con s1[len -1] accedemos al ultimo caracterer de la string y (len - 1)) mientras len sea mayor a 1 seguira avanzando
-	if (len < i) // se encarga de ajustar la longitud de len
+	//recorre la string 's1' y elimina caracteres que no estan en el conjuto de caracteres de 'set'
+	// con s1[len -1] accedemos al ultimo caracterer de la string 
+	// (len - 1)) mientras len sea mayor a 1 seguira avanzando
+	while (ft_number_guessing(set, s1[len - 1]) && (len - 1))
+		len--;
+		// se encarga de ajustar la longitud de len
+	if (len < i) 
 		len = i;
-	new = malloc(len - i + 1); //len - i eliminamos los caracteres del conjuto 'set' del principio de la string 's1'
+		 //len - i eliminamos los caracteres del conjuto 'set' del principio de la string 's1'
+	new = malloc(len - i + 1);
 	if (!new)
 		return (NULL);
 	while (i < len)

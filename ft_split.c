@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:13:11 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/03 15:20:51 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:03:25 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ static size_t	ft_word_count(char const *s, char c) //conteo de palabras
 	count = 0; 
 	while (*s)
 	{
-		while (*s == c) //va iterando hasta que sea distinto de c
+		//va iterando hasta que sea distinto de c
+		while (*s == c)
 			s++;
-		if (*s) //si encontramos el inicio de una nueva palabra vamos itinerando count
+			//si encontramos el inicio de una nueva palabra vamos itinerando count
+		if (*s)
 			count++;
-		while (*s != c && *s) //itineramos 's' hasta que sea distinto de 'c', con esto encontramos el final de la cadena
+			 //itineramos 's' hasta que sea distinto de 'c', con esto encontramos el final de la cadena
+		while (*s != c && *s)
 			s++;
 	}
 	return (count);
@@ -37,8 +40,8 @@ static void	ft_freelst(char **lst, int i)
 		free(lst[i--]);
 	free(lst);
 }
-
-static char	**ft_word_split(char **lst, char const *s, char c, int i) //separamos palabras
+ //separamos palabras
+static char	**ft_word_split(char **lst, char const *s, char c, int i)
 {
 	size_t	wlen;
 
@@ -48,12 +51,16 @@ static char	**ft_word_split(char **lst, char const *s, char c, int i) //separamo
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c)) //si no encontramos el caracter que se indique le damos la congitud de s
+			//si no encontramos el caracter que se indique le damos la congitud de s
+			if (!ft_strchr(s, c))
 				wlen = ft_strlen(s);
 			else
-				wlen = ft_strchr(s, c) - s; //da la diferencia de bytes de la cadena 's' hasta el proximo delimitador 'c'
-			lst[i] = ft_substr(s, 0, wlen); //nos da la nueva cadena
-			if (lst[i] == NULL) //si 'lst' esta vacia vamos liberando la memoria
+			//da la diferencia de bytes de la cadena 's' hasta el proximo delimitador 'c'
+				wlen = ft_strchr(s, c) - s;
+				//nos da la nueva cadena
+			lst[i] = ft_substr(s, 0, wlen);
+			//si 'lst' esta vacia vamos liberando la memoria
+			if (lst[i] == NULL)
 			{
 				ft_freelst(lst, i - 1);
 				return (NULL);
@@ -65,18 +72,19 @@ static char	**ft_word_split(char **lst, char const *s, char c, int i) //separamo
 	lst[i] = NULL;
 	return (lst);
 }
-
-char	**ft_split(char const *s, char c) //dividimos una cadena de caracteres en subcadenas mas pequeñas basadas en un delimitador
+ //dividimos una cadena de caracteres en subcadenas mas pequeñas basadas en un delimitador
+char	**ft_split(char const *s, char c)
 {
 	char	**lst;
 	int		i;
 
 	i = 0;
-	lst = malloc((ft_word_count(s, c) + 1) * sizeof(char *)); //
+	lst = malloc((ft_word_count(s, c) + 1) * sizeof(char *)); 
 	if (!s || !lst)
 		return (NULL);
-	lst = ft_word_split(lst, s, c, i); //separamos palabras y creamos subcadena 's' actual cadena 
-										//'c' palabras a separar 'lst' nueva cadena
+		//separamos palabras y creamos subcadena 's' actual cadena 
+		//'c' palabras a separar 'lst' nueva cadena
+	lst = ft_word_split(lst, s, c, i); 
 	if (!lst)
 		return (NULL);
 	else

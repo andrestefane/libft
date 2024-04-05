@@ -6,7 +6,7 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:25:50 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/03 15:31:43 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:03:23 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	return ((char *)s + i); // devolvemos 's + i' porque estamos recoriendo con i toda la string
+	// devolvemos 's + i' porque estamos recoriendo con i toda la string
+	return ((char *)s + i); 
 }
 /* int	main(void)
 {

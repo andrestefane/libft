@@ -6,13 +6,14 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:46:37 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 13:37:50 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:51:53 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n) //copia datos correctamente sin que superpongan
+//copia datos correctamente sin que superpongan
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*csrc;
 	char	*cdest;
@@ -21,12 +22,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n) //copia datos correctame
 	cdest = (char *)dest;
 	if (dest == 0 && src == 0) 
 		return (0);
-	if (csrc < cdest && csrc + n > cdest) // 'sumamos csrc + n' para evitar que se dest y src se superpongan
+		// 'sumamos csrc + n' para evitar que se dest y src se superpongan
+	if (csrc < cdest && csrc + n > cdest)
 	{
-		//avanzamos ambos punteros hacia adelente por 'bytes', se hace para que los punteros apunten al final de la region de memoria que queremos copiar.
+		//avanzamos ambos punteros hacia adelente por 'bytes',
+		// se hace para que los punteros apunten al final de la region de memoria que queremos copiar.
  		cdest += n;
 		csrc += n;
-		while (n--) //copiamos los datos de manera inversa desde el final hacia el principio, se hace para asegurar que los datos se copien correctamente
+		//copiamos los datos de manera inversa desde el final hacia el principio,
+		// se hace para asegurar que los datos se copien correctamente
+		while (n--) 
 			*--cdest = *--csrc;
 	}
 	else // si no hay superposicion entre las 2 string se copian directamente
@@ -36,3 +41,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n) //copia datos correctame
 	}
 	return (dest);
 }
+
+/* int main()
+{
+    char src[] = "Hello, world!";
+    char dest[20];
+
+
+    ft_memmove(dest, src, sizeof(src));
+
+    printf("El contenido de dest después de copiar desde src: %s\n", dest);
+
+    return 0;
+} */
