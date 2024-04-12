@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:47:12 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 16:14:42 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 19:27:41 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst) // recorremos lst lista enlazada hasta encontrar el ultimo nodo
+t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*p;
 
@@ -23,31 +23,9 @@ t_list	*ft_lstlast(t_list *lst) // recorremos lst lista enlazada hasta encontrar
 		return (p);
 	while (p)
 	{
-		if (p->next == NULL) // comprobamos si es el ultimo nodo de la lista
+		if (p->next == NULL)
 			return (p);
-		p = p->next; // recorremos la lista para encontrar el ultimo nodo
+		p = p->next;
 	}
 	return (p);
 }
-/* int	main(void)
-{
-	t_list *node1 = ft_lstnew("Node 1");
-	t_list *node2 = ft_lstnew("Node 2");
-	t_list *node3 = ft_lstnew("Node 3");
-
-	node1->next = node2;
-	node2->next = node3;
-
-	t_list *last_node = ft_lstlast(node1);
-
-	if (last_node)
-		printf("El último nodo contiene: %s\n", (char *)last_node->content);
-	else
-		printf("La lista está vacía.\n");
-
-	free(node1);
-	free(node2);
-	free(node3);
-
-	return (0);
-} */

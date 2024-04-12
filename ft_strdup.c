@@ -6,13 +6,12 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 15:49:35 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 12:46:39 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:45:55 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- // se utiliza para duplicar una cadena de caracteres
 char	*ft_strdup(const char *s1)
 {
 	size_t	len;
@@ -26,15 +25,3 @@ char	*ft_strdup(const char *s1)
 	}
 	return (dup);
 }
-
-/*  int	main(void)
-{
-	char	*string;
-	char	*result;
-
-	string = "hola mundo";
-	result = ft_strdup(string);
-	printf("la string es %s\n", result);
-	free (result);
-	return 0;
-}  */

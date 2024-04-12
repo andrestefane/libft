@@ -6,50 +6,26 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:58:58 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 08:51:50 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 19:31:16 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *)) // limpia y liberamos memoria de una lista enlazada
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*gon;
 	t_list	*aux;
 
-	aux = *lst; 
-	if (!(*lst)) // Nos aseguramos de que la lista no este vacia.
+	aux = *lst;
+	if (!(*lst))
 		return ;
-	while (aux) //recoremos el nodo desde el principio
+	while (aux)
 	{
-		gon = aux->next; //guardamos el puntero al siguiente nodo
-		del(aux->content); // liberamos cualquier recurso asociado con el contenido del nodo
-		free(aux); // liberamos memoria
-		aux = gon; // actualizamos el nodo  para que apunte al nodo 
+		gon = aux->next;
+		del(aux->content);
+		free(aux);
+		aux = gon;
 	}
 	*lst = NULL;
 }
-
-/* static void free_content(void *content)
-{
-    free(content);
-}
-
-int main(void)
-{
-    t_list *node1 = ft_lstnew(ft_strdup("Node 1 content"));
-    t_list *node2 = ft_lstnew(ft_strdup("Node 2 content"));
-    t_list *node3 = ft_lstnew(ft_strdup("Node 3 content"));
-    
-    t_list *lst = NULL;
-    ft_lstadd_back(&lst, node1);
-    ft_lstadd_back(&lst, node2);
-    ft_lstadd_back(&lst, node3);
-    
-    // Llamamos a ft_lstclear para liberar la memoria de la lista y sus nodos
-    ft_lstclear(&lst, &free_content);
-    
-
-    
-    return (0);
-} */

@@ -6,24 +6,24 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:04:25 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 08:51:54 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/03 13:13:15 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n) //compara 2 strings y dice la diferencia de bytes
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*p1;
 	const unsigned char	*p2;
 
 	p1 = s1;
 	p2 = s2;
-	while (n--) // vamos restando la longitud indicada que comparamos de las 2 strings
+	while (n--)
 	{
-		if (*p1 != *p2) 
-			return (*p1 - *p2); //devolve la diferencia de bytes entre una y otra
-		else //en caso de que sean los mismo bytes vamos avanzando por la string para que no nos quedemos en un bucle infinito
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		else
 		{
 			p1++;
 			p2++;
@@ -31,17 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n) //compara 2 strings y di
 	}
 	return (0);
 }
-
-
-/* int main()
-{
-    const char str1[] = "Hello, world!";
-    const char str2[] = "Hello, there!";
-
-
-    int difference = ft_memcmp(str1, str2, sizeof(str1));
-
-    printf("La diferencia entre las cadenas es: %d\n", difference);
-
-    return 0;
-} */

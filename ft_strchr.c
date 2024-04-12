@@ -6,12 +6,11 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:25:50 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 12:41:10 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:30:09 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//encuentra la primer encurrencia el primer caracter en la string que se indique
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -26,19 +25,5 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	// devolvemos 's + i' porque estamos recoriendo con i toda la string
-	return ((char *)s + i); 
+	return ((char *)s + i);
 }
-/*  int	main(void)
-{
-	char	*string;
-	int		c;
-	char	*result;
-
-	string = "hola";
-	c = 'a';
-	result = ft_strchr(string, c),
-	printf("se encontro '%c' en el byte %ld\n", c, result - string);
-	return (0);
-}
-  */

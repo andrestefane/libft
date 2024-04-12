@@ -6,13 +6,13 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:57:53 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/01 12:18:02 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:09:49 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd) //imprimimos numeros enteros
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	ln;
 

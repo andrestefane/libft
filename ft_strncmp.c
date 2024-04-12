@@ -6,19 +6,17 @@
 /*   By: astefane <astefane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:20:15 by astefane          #+#    #+#             */
-/*   Updated: 2024/04/05 09:03:14 by astefane         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:08:45 by astefane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- //compara los bytes de 2 strings 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
 	i = 0;
-	//comparamos las strings hasta alcanzar el numero de n
 	while (n && s1[i] && (s1[i] == s2[i]))
 	{
 		i++;
@@ -30,22 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	else
 	{
-		 //devolvemos la diferencia de bytes
 		return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
 	}
 }
-
-/* int	main(void)
-{
-	char	*s1 = "haaaola";
-	char	*s2 = "hola";
-	int		result = ft_strncmp(s1, s2, 3);
-	if(result == 0)
-		printf("las strings son iguales%d\n",result);
-	else if (result < 0)
-		printf("la primera string es mas pequeña por %d\n", result);
-	else
-		printf("la seguda string es mas grande por %d\n", result);
-	return (0);
-}
- */
